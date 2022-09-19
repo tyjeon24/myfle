@@ -101,13 +101,13 @@ flutter:
   fonts:
     - family: One_Mobile
       fonts:
-        - asset: fonts/ONE Mobile Bold.ttf
+        - asset: fonts/NotoSansKR-Bold.otf
           weight: 700  #w700 bold
-        - asset: fonts/ONE Mobile Light.ttf
+        - asset: fonts/NotoSansKR-Regular.otf
           weight: 300  #w300 light
-        - asset: fonts/ONE Mobile Regular.ttf
+        - asset: fonts/NotoSansKR-Medium.otf
           weight: 400 #w300 normal
-        - asset: fonts/ONE Mobile Title.ttf
+        - asset: fonts/NotoSansKR-Black.otf
           weight: 900
 
   # For details regarding fonts from package dependencies,
