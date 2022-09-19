@@ -44,6 +44,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   dropdown_button2: ^1.6.3   #https://pub.dev/packages/dropdown_button2
   flutter_email_sender: ^5.1.0
+  flutter_svg: ^1.1.5
 
 
 dev_dependencies:

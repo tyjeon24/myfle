@@ -2,6 +2,7 @@ import 'package:calculator_frontend/widgets/LargeText.dart';
 import 'package:calculator_frontend/widgets/NavigationBox.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class DesktopHomepage extends StatefulWidget {
   const DesktopHomepage({Key? key}) : super(key: key);
@@ -40,6 +41,8 @@ class _DesktopHomepageState extends State<DesktopHomepage> {
   @override
   Widget build(BuildContext context) {
     var widgetSize = MediaQuery.of(context).size;
+    var titleColor = 0xff3d889b;
+
     return Scaffold(
       backgroundColor: Colors.white,
       extendBodyBehindAppBar: true,
@@ -48,9 +51,7 @@ class _DesktopHomepageState extends State<DesktopHomepage> {
       appBar: PreferredSize(
         preferredSize: Size(widgetSize.width, 200),
         child: Container(
-            color: _scrollPosition == 0
-                ? Colors.white
-                : Colors.transparent,
+            color: _scrollPosition == 0 ? Colors.white : Colors.transparent,
             padding: EdgeInsets.all(10),
             child: Padding(
               padding: EdgeInsets.only(
@@ -63,11 +64,10 @@ class _DesktopHomepageState extends State<DesktopHomepage> {
               ),
               child: Row(
                 children: [
-                  Image.asset(
-                    'assets/images/logo_color_row.png',
-                    height: 30,
-                    width: 150,
-                    fit: BoxFit.fill,
+                  SvgPicture.asset(
+                    'assets/images/logo_color_row.svg',
+                    color: Color(0xFF80cfd5),
+                    fit: BoxFit.contain,
                   ),
                   Spacer(),
                   Row(
@@ -149,7 +149,7 @@ class _DesktopHomepageState extends State<DesktopHomepage> {
         child: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(
-            colors: [Color(0xffe8e8e8), Color(0x70d2eced)],
+            colors: [Color(0xffffffff), Color(0xFFe9f4f6)], // 배경
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           )),
@@ -178,14 +178,13 @@ class _DesktopHomepageState extends State<DesktopHomepage> {
                           style: TextStyle(
                               fontSize: 135,
                               fontWeight: FontWeight.w900,
-                              color: Colors.blueAccent,
-                          shadows: [
-                            Shadow(
-                              offset: Offset(5, 5),
-                              color: Colors.white.withOpacity(.7),
-                              blurRadius: 7
-                            )
-                          ]),
+                              color: Color(titleColor),
+                              shadows: [
+                                Shadow(
+                                    offset: Offset(3, 3),
+                                    color: Color.fromARGB(60, 0, 0, 0),
+                                    blurRadius: 5)
+                              ]),
                         ),
                         SizedBox(
                           height: 52,
@@ -193,7 +192,14 @@ class _DesktopHomepageState extends State<DesktopHomepage> {
                               fit: BoxFit.fitWidth,
                               child: Text('혁신적인 양도소득세 계산기',
                                   style: TextStyle(
-                                      fontSize: 35, color: Colors.black))),
+                                      fontSize: 35,
+                                      color: Colors.black,
+                                      shadows: [
+                                        Shadow(
+                                            offset: Offset(3, 3),
+                                            color: Color.fromARGB(100, 0, 0, 0),
+                                            blurRadius: 3)
+                                      ]))),
                         ),
                         const SizedBox(
                           height: 50,
@@ -214,7 +220,7 @@ class _DesktopHomepageState extends State<DesktopHomepage> {
                                           text:
                                               ' 세법 규정을 자동으로 판단해서 계산하는  \n 혁신적인 양도소득세 계산기',
                                           style: TextStyle(
-                                            color: Colors.blueAccent,
+                                            color: Color(titleColor),
                                           )),
                                       TextSpan(text: ' 입니다.  ')
                                     ])),
@@ -424,11 +430,11 @@ class _DesktopHomepageState extends State<DesktopHomepage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Image.asset(
-                        'assets/images/logo_color_col.png',
-                        height: 70,
+                      SvgPicture.asset(
+                        'assets/images/logo_color_col.svg',
                         width: 70,
-                        fit: BoxFit.contain,
+                        height: 70,
+                        color: Color(0xFF80cfd5),
                       ),
                       const SizedBox(
                         height: 20,
